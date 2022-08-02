@@ -1,0 +1,68 @@
+@{
+    var showClass = IsVisible ? "block" : "d-none";
+}
+
+<div class="@showClass" style="border: 2px solid black; display: inline-block; border-radius: 10px;">
+  <h2>@HeaderText</h2> 
+    <br>
+    <br>
+    @if (IsButtons)
+    {
+        <button style="text-align: Center;" @onclick="Remove">Yes</button>
+        <button style="text-align: Center;" @onclick="Dont">No</button>
+
+    }
+    @if (!IsButtons)
+    {
+        <input @bind="Description" placeholder="Enter Description" />
+        <button style="text-align: Center;" @onclick="Dont">Close</button>
+    }
+</div>
+@code {
+
+    private string Title;
+    [Parameter]
+    public bool IsVisible { get; set; }
+
+    [Parameter]
+    public bool IsButtons { get; set; }
+    [Parameter]
+    public string? HeaderText { get; set; }
+
+    public string Description = "";
+
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnQuit { get; set; }
+
+
+    [Parameter]
+    public string? BodyText { get; set; }
+
+    public void Show(string headerText, bool choice)
+    {
+        HeaderText = headerText;
+        IsVisible = true;
+        IsButtons = choice;
+        StateHasChanged();
+    }
+
+    public async void Remove(MouseEventArgs e)
+    {
+        HeaderText = "";
+        IsVisible = false;
+        StateHasChanged();
+        await OnQuit.InvokeAsync(e);
+    }
+
+    public async void Dont(MouseEventArgs e)
+    {
+        HeaderText = "";
+        IsVisible = false;
+        StateHasChanged();
+        await OnQuit.InvokeAsync(e);
+
+    }
+
+
+
+}

@@ -1,0 +1,203 @@
+﻿@page "/"
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
+@using System.Text.Json
+@inject ProtectedLocalStorage BrowserStorage
+
+<style>
+    body {
+        background-image: linear-gradient(180deg, rgb(0, 72, 186) 0%, rgb(201, 255, 229) 70%);
+    }
+
+    table,
+    tr,
+    th,
+    td {
+        border: 2px solid black;
+         border-radius: 10px;
+        
+        
+    }
+
+    h2,
+    h3,
+    th {
+        color: white;
+    }
+</style>
+<div class="row">
+    <div class="col">
+        <h2>Todo's Left: @todosleft</h2>
+    </div>
+    <div class="col">
+        <h3 class="float-right">Total Minutes: @TotalMinutes</h3>
+    </div>
+</div>
+
+<div>
+    <input placeholder="Something todo" @bind="newTodo" />
+    <button @onclick="AddTodo">Add todo</button>
+    <button @onclick="Save">Save</button>
+    <button @onclick="Load">Load</button>
+    <button style="background-color: red; color: white" @onclick="ShowDialog"> Remove Completed </button>
+</div>
+<br>
+<br>
+<Timer TimerMinutes="TotalMinutes" OnTimeReset="OnResetHandler"></Timer>
+<br>
+<br>
+<br>
+<table class="table" style="background-color: Transparent; ">
+    <tr>
+        <th>Title</th>
+        <th>Minutes</th>
+        <th>Change Time</th>
+        <th>Completed</th>
+    </tr>
+    @for (int i = 0; i < todos.Count(); i++)
+    {
+        if (!todos[i].IsRemoved)
+        {
+            <TodoItem Item="todos[i]" OnTimeChange="OnTimeChangeHandler" OnCheckClick="OnCheckClickHandler" />
+        }
+
+
+
+    }
+
+</table>
+
+
+<Dialog @ref="dialogRef" OnQuit="OnQuitHandler" />
+
+@code {
+
+    private Dialog dialogRef;
+
+
+    private string? newTodo;
+
+    private string? newTitle;
+    public List<TodoObj> todos = new List<TodoObj>();
+
+    public TodoItem current;
+    public List<TodoItem> children = new List<TodoItem>();
+    public int TotalMinutes;
+
+    private int todosleft = 0;
+
+    private void AddTodo()
+    {
+        if (!string.IsNullOrWhiteSpace(newTodo))
+        {
+            todos.Add(new TodoObj { Title = newTodo });
+            newTodo = string.Empty;
+        }
+        UpdateTotalMinutes();
+        UpdateTodosLeft();
+    }
+
+    private void RemoveDone()
+    {
+        for (int i = 0; i < todos.Count(); i++)
+        {
+
+            if (todos[i].IsDone)
+            {
+
+                todos[i].IsRemoved = true;
+            }
+        }
+        UpdateTotalMinutes();
+    }
+
+
+
+    private void ShowDialog()
+    {
+        dialogRef.Show("Are you sure you want do delete completed items?", true);
+    }
+
+    protected override void OnInitialized()
+    {
+        todos = new List<TodoObj>()
+{
+new TodoObj() { Title = "Analysis", Minutes = 40 },
+new TodoObj { Title = "Design", Minutes = 30 },
+new TodoObj { Title = "Implementation", Minutes = 75 },
+new TodoObj { Title = "Testing", Minutes = 40 }
+};
+
+        UpdateTotalMinutes();
+    }
+
+    public void UpdateTotalMinutes()
+    {
+        TotalMinutes = 0;
+        foreach (var item in todos)
+        {
+            if (!item.IsRemoved)
+            {
+                TotalMinutes += item.Minutes;
+            }
+        }
+
+
+
+    }
+
+    public void UpdateTodosLeft()
+    {
+        todosleft = 0;
+        foreach (var item in todos)
+        {
+            if (!item.IsRemoved)
+            {
+                if (!item.IsDone)
+                    todosleft++;
+            }
+        }
+    }
+
+    public async Task Save()
+    {
+        string save = System.Text.Json.JsonSerializer.Serialize(todos);
+        await BrowserStorage.SetAsync("List", save);
+
+    }
+
+    public async Task Load()
+    {
+        todos.Clear();
+        var result = await BrowserStorage.GetAsync<string>("List");
+        string loaded = result.Value;
+        todos = System.Text.Json.JsonSerializer.Deserialize<List<TodoObj>>(loaded);
+
+        UpdateTotalMinutes();
+        UpdateTodosLeft();
+
+    }
+
+    public void OnTimeChangeHandler(MouseEventArgs e)
+    {
+        UpdateTotalMinutes();
+    }
+
+    public void OnCheckClickHandler(MouseEventArgs e)
+    {
+        UpdateTotalMinutes();
+        UpdateTodosLeft();
+        //System.Console.WriteLine("event fired");
+    }
+
+    public void OnQuitHandler(MouseEventArgs e)
+    {
+        RemoveDone();
+    }
+
+    public void OnResetHandler(MouseEventArgs e)
+    {
+        UpdateTotalMinutes();
+        UpdateTodosLeft();
+    }
+
+}

@@ -1,0 +1,102 @@
+<Dialog @ref="dialogRefDesc" OnQuit="OnQuitHandler" />
+<style>
+    table,
+    tr,
+    th,
+    td {
+
+        border: 2px solid black;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        
+
+    }
+
+    .name {
+        text-align: center;
+        font-size: x-large;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: white;
+        background-color: transparent;
+        size: fill;
+    }
+</style>
+<tr>
+    <button class="name" style="color: @Item.getColor();  border: none;" @onclick="ShowDialog">@Item.Title</button>
+    <td class="name">@Item.Minutes</td>
+    <td>
+        <button style="background-color: green ;color: white;" @onclick="AddTime">+10 Minutes</button>
+        <button style="background-color: red ;color: white;" @onclick="RemTime">-10 Minutes</button>
+    </td>
+    <td>
+        <input type="checkbox" @bind="Item.IsDone" @onclick="CheckClick" />
+    </td>
+</tr>
+
+@code {
+    [Parameter]
+    public TodoObj Item { get; set; }
+
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnTimeChange { get; set; }
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnCheckClick { get; set; }
+
+    private Dialog dialogRefDesc;
+
+
+
+
+    public void AddTime()
+    {
+        Item.Minutes += 10;
+    }
+
+    public async Task AddTime(MouseEventArgs e)
+    {
+        Item.Minutes += 10;
+        await OnTimeChange.InvokeAsync(e);
+    }
+
+    public async Task RemTime(MouseEventArgs e)
+    {
+        if (Item.Minutes > 0)
+        {
+            Item.Minutes -= 10;
+            await OnTimeChange.InvokeAsync(e);
+        }
+    }
+
+
+
+    public async Task CheckClick(MouseEventArgs e)
+    {
+        Item.IsDone = !Item.IsDone;
+        await OnCheckClick.InvokeAsync(e);
+    }
+
+    public void Click()
+    {
+
+
+    }
+
+    private void ShowDialog()
+    {
+        String d = Item.Description;
+        dialogRefDesc.Show(d, false);
+
+    }
+
+    public void OnQuitHandler(MouseEventArgs e)
+    {
+        String str = dialogRefDesc.Description;
+
+        if (!string.IsNullOrWhiteSpace(str))
+        {
+            Item.Description = str;
+        }
+    }
+
+
+
+}

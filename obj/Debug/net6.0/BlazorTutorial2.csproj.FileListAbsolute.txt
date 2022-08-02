@@ -1,0 +1,54 @@
+C:\Users\jjclay\BlazorTutorial2\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\jjclay\BlazorTutorial2\bin\Debug\net6.0\appsettings.json
+C:\Users\jjclay\BlazorTutorial2\bin\Debug\net6.0\BlazorTutorial2.staticwebassets.runtime.json
+C:\Users\jjclay\BlazorTutorial2\bin\Debug\net6.0\BlazorTutorial2.exe
+C:\Users\jjclay\BlazorTutorial2\bin\Debug\net6.0\BlazorTutorial2.deps.json
+C:\Users\jjclay\BlazorTutorial2\bin\Debug\net6.0\BlazorTutorial2.runtimeconfig.json
+C:\Users\jjclay\BlazorTutorial2\bin\Debug\net6.0\BlazorTutorial2.dll
+C:\Users\jjclay\BlazorTutorial2\bin\Debug\net6.0\BlazorTutorial2.pdb
+C:\Users\jjclay\BlazorTutorial2\obj\Debug\net6.0\BlazorTutorial2.csproj.AssemblyReference.cache
+C:\Users\jjclay\BlazorTutorial2\obj\Debug\net6.0\BlazorTutorial2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jjclay\BlazorTutorial2\obj\Debug\net6.0\BlazorTutorial2.AssemblyInfoInputs.cache
+C:\Users\jjclay\BlazorTutorial2\obj\Debug\net6.0\BlazorTutorial2.AssemblyInfo.cs
+C:\Users\jjclay\BlazorTutorial2\obj\Debug\net6.0\BlazorTutorial2.csproj.CoreCompileInputs.cache
+C:\Users\jjclay\BlazorTutorial2\obj\Debug\net6.0\BlazorTutorial2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\jjclay\BlazorTutorial2\obj\Debug\net6.0\BlazorTutorial2.RazorAssemblyInfo.cache
+C:\Users\jjclay\BlazorTutorial2\obj\Debug\net6.0\BlazorTutorial2.RazorAssemblyInfo.cs
+C:\Users\jjclay\BlazorTutorial2\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\jjclay\BlazorTutorial2\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\jjclay\BlazorTutorial2\obj\Debug\net6.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
+C:\Users\jjclay\BlazorTutorial2\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
+C:\Users\jjclay\BlazorTutorial2\obj\Debug\net6.0\scopedcss\bundle\BlazorTutorial2.styles.css
+C:\Users\jjclay\BlazorTutorial2\obj\Debug\net6.0\scopedcss\projectbundle\BlazorTutorial2.bundle.scp.css
+C:\Users\jjclay\BlazorTutorial2\obj\Debug\net6.0\BlazorTutorial2.dll
+C:\Users\jjclay\BlazorTutorial2\obj\Debug\net6.0\refint\BlazorTutorial2.dll
+C:\Users\jjclay\BlazorTutorial2\obj\Debug\net6.0\BlazorTutorial2.pdb
+C:\Users\jjclay\BlazorTutorial2\obj\Debug\net6.0\BlazorTutorial2.genruntimeconfig.cache
+C:\Users\jjclay\BlazorTutorial2\obj\Debug\net6.0\ref\BlazorTutorial2.dll
+C:\Users\jjclay\Documents\Coding Tutorials\BlazorTutorial2\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\jjclay\Documents\Coding Tutorials\BlazorTutorial2\bin\Debug\net6.0\appsettings.json
+C:\Users\jjclay\Documents\Coding Tutorials\BlazorTutorial2\bin\Debug\net6.0\BlazorTutorial2.staticwebassets.runtime.json
+C:\Users\jjclay\Documents\Coding Tutorials\BlazorTutorial2\bin\Debug\net6.0\BlazorTutorial2.exe
+C:\Users\jjclay\Documents\Coding Tutorials\BlazorTutorial2\bin\Debug\net6.0\BlazorTutorial2.deps.json
+C:\Users\jjclay\Documents\Coding Tutorials\BlazorTutorial2\bin\Debug\net6.0\BlazorTutorial2.runtimeconfig.json
+C:\Users\jjclay\Documents\Coding Tutorials\BlazorTutorial2\bin\Debug\net6.0\BlazorTutorial2.dll
+C:\Users\jjclay\Documents\Coding Tutorials\BlazorTutorial2\bin\Debug\net6.0\BlazorTutorial2.pdb
+C:\Users\jjclay\Documents\Coding Tutorials\BlazorTutorial2\obj\Debug\net6.0\BlazorTutorial2.csproj.AssemblyReference.cache
+C:\Users\jjclay\Documents\Coding Tutorials\BlazorTutorial2\obj\Debug\net6.0\BlazorTutorial2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jjclay\Documents\Coding Tutorials\BlazorTutorial2\obj\Debug\net6.0\BlazorTutorial2.AssemblyInfoInputs.cache
+C:\Users\jjclay\Documents\Coding Tutorials\BlazorTutorial2\obj\Debug\net6.0\BlazorTutorial2.AssemblyInfo.cs
+C:\Users\jjclay\Documents\Coding Tutorials\BlazorTutorial2\obj\Debug\net6.0\BlazorTutorial2.csproj.CoreCompileInputs.cache
+C:\Users\jjclay\Documents\Coding Tutorials\BlazorTutorial2\obj\Debug\net6.0\BlazorTutorial2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\jjclay\Documents\Coding Tutorials\BlazorTutorial2\obj\Debug\net6.0\BlazorTutorial2.RazorAssemblyInfo.cache
+C:\Users\jjclay\Documents\Coding Tutorials\BlazorTutorial2\obj\Debug\net6.0\BlazorTutorial2.RazorAssemblyInfo.cs
+C:\Users\jjclay\Documents\Coding Tutorials\BlazorTutorial2\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\jjclay\Documents\Coding Tutorials\BlazorTutorial2\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\jjclay\Documents\Coding Tutorials\BlazorTutorial2\obj\Debug\net6.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
+C:\Users\jjclay\Documents\Coding Tutorials\BlazorTutorial2\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
+C:\Users\jjclay\Documents\Coding Tutorials\BlazorTutorial2\obj\Debug\net6.0\scopedcss\bundle\BlazorTutorial2.styles.css
+C:\Users\jjclay\Documents\Coding Tutorials\BlazorTutorial2\obj\Debug\net6.0\scopedcss\projectbundle\BlazorTutorial2.bundle.scp.css
+C:\Users\jjclay\Documents\Coding Tutorials\BlazorTutorial2\obj\Debug\net6.0\BlazorTutorial2.dll
+C:\Users\jjclay\Documents\Coding Tutorials\BlazorTutorial2\obj\Debug\net6.0\refint\BlazorTutorial2.dll
+C:\Users\jjclay\Documents\Coding Tutorials\BlazorTutorial2\obj\Debug\net6.0\BlazorTutorial2.pdb
+C:\Users\jjclay\Documents\Coding Tutorials\BlazorTutorial2\obj\Debug\net6.0\BlazorTutorial2.genruntimeconfig.cache
+C:\Users\jjclay\Documents\Coding Tutorials\BlazorTutorial2\obj\Debug\net6.0\ref\BlazorTutorial2.dll
